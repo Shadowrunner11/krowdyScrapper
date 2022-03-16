@@ -1,0 +1,16 @@
+{
+ "name": "scrapper",
+ "version": "1.0.0",
+ "main": "background.js",
+ "license": "MIT",
+ "scripts": {
+  "build": "esbuild src/index.js --bundle --outfile=dist/out.js",
+  "dev": "esbuild src/index.js --bundle --outdir=static --servedir=static",
+  "watch script": "esbuild src/modules/Scripts/scrapper.js --bundle --watch --outdir=static",
+  "watch background":"esbuild src/background.js --bundle --watch --outdir=static"
+ },
+ "dependencies": {
+  "dexie": "^3.2.1",
+  "esbuild": "^0.14.27"
+ }
+}
