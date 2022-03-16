@@ -14,7 +14,8 @@ chrome.runtime.onConnect.addListener(port=>{
                console.log(mensaje)
                if (!db.isOpen()) db.open();
                db.products.add(mensaje)
-                    .then(response=>{console.log(response, "aniadido con exito"); console.log(db.products.toArray())})
+                    .then(response=>{console.log(response, "aniadido con exito"); console.log(db.products.toArray()) ;
+               })
                     .catch(error => console.log(error)) 
                db.close()
           })

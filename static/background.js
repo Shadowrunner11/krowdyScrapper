@@ -4734,9 +4734,13 @@
     if (port.name === "safePort") {
       port.onMessage.addListener((mensaje) => {
         console.log(mensaje);
+        if (!db.isOpen())
+          db.open();
         db.products.add(mensaje).then((response) => {
-          console.log(response);
+          console.log(response, "aniadido con exito");
+          console.log(db.products.toArray());
         }).catch((error) => console.log(error));
+        db.close();
       });
     }
   });
