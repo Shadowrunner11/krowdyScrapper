@@ -7,10 +7,15 @@
   "build": "esbuild src/index.js --bundle --outfile=dist/out.js",
   "dev": "esbuild src/index.js --bundle --outdir=static --servedir=static",
   "watch script": "esbuild src/modules/Scripts/scrapper.js --bundle --watch --outdir=static",
-  "watch background": "esbuild src/background.js --bundle --watch --outdir=static"
+  "watch background": "esbuild src/background.js --bundle --watch --outdir=static",
+  "serve": "node ./backend/server.js"
  },
  "dependencies": {
+  "axios": "^0.26.1",
   "dexie": "^3.2.1",
-  "esbuild": "^0.14.27"
+  "esbuild": "^0.14.27",
+  "mongoose": "^6.2.7",
+  "restify": "^8.6.1",
+  "restify-errors": "^8.0.2"
  }
 }
